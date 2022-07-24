@@ -25,6 +25,10 @@ async def _main(client: Client, storage: Storage, github_client: AsyncClient) ->
         await idle()
 
 
+def _get_project_root() -> Path:
+    return Path(__file__).parent / "userbot"
+
+
 def main() -> None:
     for file in ("config.yaml", "/data/config.yaml", "/config.yaml"):
         try:
@@ -36,7 +40,8 @@ def main() -> None:
             break
     else:
         raise FileNotFoundError("Config file not found!")
-    data_dir = Path(config.get("data_location", "data")).resolve()
+    data_dir = Path(f'{_get_project_root()}/{config.get("data_location", "data")}')
+    print(data_dir)
     if not data_dir.exists():
         data_dir.mkdir()
     if not data_dir.is_dir():
@@ -46,7 +51,7 @@ def main() -> None:
         name=config["session"],
         api_id=config["api_id"],
         api_hash=config["api_hash"],
-        app_version="evgfilim1/userbot 0.2.x",
+        app_version="karych/userbot 0.1.x",
         device_model="Linux",
         workdir=str(data_dir),
         **(config.get("kwargs") or {}),

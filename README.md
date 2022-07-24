@@ -1,8 +1,5 @@
 # userbot
 
-[![wakatime](https://wakatime.com/badge/github/evgfilim1/userbot.svg)](https://wakatime.com/badge/github/evgfilim1/userbot)
-[![black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-
 The userbot I use with some specific features written in Pyrogram.
 
 ## Features
@@ -91,7 +88,7 @@ Shortcuts work only when sent by the user who runs userbot.
 
 1. Copy the following to `config.yaml` and modify for yourself:
     ```yaml
-    session: evgfilim1 # Name for session file
+    session: karych # Name for session file
     api_id: ""  # Insert your Telegram api_id here
     api_hash: ""  # Insert your Telegram api_hash here
     kwargs:  # Optional, will be passed directly to `pyrogram.Client`, see docs for more info

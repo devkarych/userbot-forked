@@ -15,12 +15,12 @@ commands = CommandsModule()
 @commands.add("about", usage="")
 async def about(_: Client, __: Message, ___: str) -> str:
     """Shows information about this userbot"""
-    base_url = "https://github.com/evgfilim1/userbot"
+    base_url = "https://github.com/devkarych/userbot"
     commit = getenv("GITHUB_SHA", None)
     # Maybe get this from the git repo, but there's no need for it now
     t = (
         f"ℹ️ <b>About userbot</b>\n"
-        f"<i>Repo:</i> <a href='{base_url}'>evgfilim1/userbot</a>\n"
+        f"<i>Repo:</i> <a href='{base_url}'>devkarych/userbot</a>\n"
         f"<i>Commit:</i> <code>{commit or 'staging'}</code>"
     )
     if commit:

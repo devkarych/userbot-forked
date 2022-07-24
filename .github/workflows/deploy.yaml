@@ -85,7 +85,7 @@ jobs:
 
       - name: Deploy Docker app
         env:
-          DOCKER_HOST: ssh://github@server.evgfilim1.me
+          DOCKER_HOST: ssh://github@server.karych.me
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
         run: |
