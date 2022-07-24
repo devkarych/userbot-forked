@@ -1,0 +1,12 @@
+[Unit]
+Description=Userbot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/www/code/userbot/
+ExecStart=/home/www/code/userbot/venv/bin/python .
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
