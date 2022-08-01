@@ -40,7 +40,7 @@ def main() -> None:
             break
     else:
         raise FileNotFoundError("Config file not found!")
-    data_dir = Path(f'{_get_project_root()}/{config.get("data_location", "data")}')
+    data_dir = _get_project_root() / config.get("data_location", "data")
     if not data_dir.exists():
         data_dir.mkdir()
     if not data_dir.is_dir():
