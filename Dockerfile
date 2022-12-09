@@ -1,4 +1,4 @@
-FROM python:3.11.0-alpine AS i18n-build
+FROM python:3.11.1-alpine AS i18n-build
 
 COPY dev-requirements.txt /tmp/dev-requirements.txt
 RUN pip install --no-cache-dir -r /tmp/dev-requirements.txt
@@ -7,7 +7,7 @@ COPY locales /tmp/locales
 # Having no locales raises an error and is expected to fail, continuing anyway
 RUN pybabel compile -D evgfilim1-userbot -d /tmp/locales || true
 
-FROM python:3.11.0-slim AS wheel-build
+FROM python:3.11.1-slim AS wheel-build
 
 WORKDIR /tmp
 
